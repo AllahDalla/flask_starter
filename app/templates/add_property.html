@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block main %}
+    {% include "flash_messages.html" %}
+<div class="form-container">
+    <h1>Add New Property</h1>
+    <form id="add-property-form" action="" method="post" enctype="multipart/form-data">
+        {{form.csrf_token}}
+        {{form.propertyTitle.label}}
+        {{form.propertyTitle}}
+        {{form.propertyDescription.label}}
+        {{form.propertyDescription}}
+        <div class="small-data">
+            <div class="small-data-group">
+                <div class="individual">
+                    {{form.numberRooms.label}}
+                    {{form.numberRooms}}
+                </div>
+                <div class="individual">
+                    {{form.numberBathrooms.label}}
+                    {{form.numberBathrooms}}
+                </div>
+            </div>
+            <div class="small-data-group">
+                <div class="individual">
+                    {{form.price.label}}
+                    {{form.price}}
+                </div>
+                <div class="individual">
+                    {{form.propertyType.label}}
+                    {{form.propertyType}}
+                </div>
+            </div>
+        </div>
+        {{form.location.label}}
+        {{form.location}}
+        {{form.photo.label}}
+        {{form.photo}}
+        {{form.addPropertyButton}}
+    </form>
+</div>
+{% endblock %}

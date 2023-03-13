@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="property-wrapper">
+    {% for image in images %}
+    <div class="property-info-container">
+        <img src = "{{url_for('propertyImage', propertyImage = image)}}">
+        <div class="property-information-container">
+            <p class="title">My property, is your property</p>
+            <p class="location">Something Show go here</p>
+            <p class="price">$1,500.00</p>
+            <button class="view-property-btn" id="{{image}}">View property</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
